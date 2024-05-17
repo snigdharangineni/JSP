@@ -2,11 +2,11 @@ package com.jspLearning;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 
@@ -17,10 +17,18 @@ public class AddServlet extends HttpServlet{
 		
 		int k = i+j;
 		
-		req.setAttribute("k", k);
+		HttpSession session = req.getSession();
+		session.setAttribute("k", k);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+		res.sendRedirect("sq");
+		//res.sendRedirect("sq?k=" + k); //session management
+		
+//		req.setAttribute("k", k);
+//		
+//		RequestDispatcher rd = req.getRequestDispatcher("sq");
+//		rd.forward(req, res);
+		
+		
 	}
 }
  
