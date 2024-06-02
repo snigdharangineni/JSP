@@ -22,6 +22,8 @@ public class SqServlet extends HttpServlet{
 		//int k = Integer.parseInt(req.getParameter("k"));
 		
 		k = k*k;
+		out.print("<html><body bgcolor = 'cyan'>" );
 		out.println("result is " + k);
+		out.print("</body></html>");
 	}
 }
