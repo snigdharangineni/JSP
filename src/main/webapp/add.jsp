@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import = "java.sql.Statement, java.util.Random"%>
+    pageEncoding="UTF-8" errorPage = "error.jsp"%>
     <%@ page import = "java.util.ArrayList" %>
     <%@ include file = "header.jsp" %>
 <!DOCTYPE html>
@@ -18,6 +18,7 @@
 	out.println("output is " +k);
 	
 	pageContext.setAttribute("name", "Snigdha", PageContext.SESSION_SCOPE);
+	int exception = 9/0;
 	
 %>
 </body>
